@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>I am default layout</title>
+    <th:block layout:fragment="css"></th:block>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+            integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <th:block layout:fragment="javascript"></th:block>
+</head>
+<body>
+<!-- header 시작 -->
+<div th:replace="fragments/header :: header"></div>
+<!-- header 끝 -->
+<!-- content 시작 -->
+<!--<div th:replace="${view} :: content"></div>-->
+<div layout:fragment="content"></div>
+<!-- content 끝 -->
+<!-- footer 시작 -->
+<div th:replace="fragments/footer :: footer"></div>
+<!-- footer 끝 -->
+</body>
+</html>
